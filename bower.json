@@ -1,0 +1,17 @@
+{
+  "name": "angular-finden",
+  "version": "0.0.1",
+  "homepage": "https://github.com/coleGillespie/angular-finden",
+  "authors": [
+    "Cole Gillespie <cgillespie@webassign.net>"
+  ],
+  "description": "geosearching twitter",
+  "main": "main.js",
+  "keywords": [
+    "js"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.6"
+  }
+}
