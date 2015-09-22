@@ -8,11 +8,6 @@ nconf.file('config.json');
 
 server.listen(3030);
 app.use(express.static('public'));
-// app.get('/', function (req, res) {
-//   res.sendfile(__dirname + '/public/index.html');
-// });
-
-
 
 var t = new twitter({
     consumer_key: nconf.get("consumer_key"),
@@ -21,12 +16,8 @@ var t = new twitter({
     access_token_secret: nconf.get("access_token_secret")
 });
 
-
 t.stream('statuses/filter', {'locations':'-74,40,-73,41'} , function( stream, err ) {
-      console.log(stream, err)
-
       io.on('connection', function (socket) {
-
         stream.on('error', function(err){
             console.log("failed stream", err);
         });
@@ -36,7 +27,5 @@ t.stream('statuses/filter', {'locations':'-74,40,-73,41'} , function( stream, er
             socket.emit( 'mapTweet', data );
           }
         });
-
       });
-
 })

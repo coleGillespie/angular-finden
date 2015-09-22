@@ -7,6 +7,7 @@ function initMap() {
   });
 }
 socket.on('mapTweet', function (data) {
+  console.log(data);
   console.log(data.text);
   console.log(data.geo.coordinates);
   var marker = new google.maps.Marker({

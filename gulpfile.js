@@ -1,9 +1,16 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
+var server = require( 'gulp-develop-server' );
 
-gulp.task('default', function() {
-  // place code for your default task here
+// run server 
+gulp.task( 'server:start', function() {
+    server.listen( { path: './app.js' } );
+});
+ 
+// restart server if app.js changed 
+gulp.task( 'server:restart', function() {
+    gulp.watch( [ './app.js' ], server.restart );
 });
 
 // Lint Task
@@ -27,4 +34,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'compress', 'watch']);
+gulp.task('default', ['lint', 'compress','server:start', 'watch']);
