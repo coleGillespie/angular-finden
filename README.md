@@ -1,2 +1,2 @@
 # angular-finden
-rewrite of node-finden 
+jill is amazing 
