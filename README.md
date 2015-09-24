@@ -1,2 +1,4 @@
 # angular-finden
-jill is amazing 
+git pull
+npm install
+npm start
